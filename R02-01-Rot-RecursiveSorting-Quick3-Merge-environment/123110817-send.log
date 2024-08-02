@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-08-02T09:49:52.981-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 150.165.74.47 at 02-08-2024 09*49*52</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-08-02T17:14:14.435-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 150.165.74.25 at 02-08-2024 17*14*14</message>
+</record>
