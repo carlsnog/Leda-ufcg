@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import sorting.AbstractSorting;
 import sorting.linearSorting.CountingSort;
+import sorting.linearSorting.ExtendedCountingSort;
 
 public class StudentSortingTest {
 
@@ -25,8 +26,8 @@ public class StudentSortingTest {
 				31 });
 		populaVetorTamanhoImpar(new Integer[] { 6, 41, 32, 7, 26, 4, 37, 49,
 				11, 18, 36 });
-		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 1, 5, 1, 4 });
-		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
+		populaVetorRepetido(new Integer[] { 4, 9, 8, 4, 1, 5, 1, 4 });
+		populaVetorIgual(new Integer[] { });
 
 		getImplementation();
 	}
@@ -37,7 +38,9 @@ public class StudentSortingTest {
 	 * do aluno
 	 */
 	private void getImplementation() {
+		//this.implementation = new ExtendedCountingSort();
 		this.implementation = new CountingSort();
+
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
