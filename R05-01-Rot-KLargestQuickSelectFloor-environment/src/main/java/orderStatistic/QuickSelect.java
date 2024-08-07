@@ -1,5 +1,7 @@
 package orderStatistic;
 
+import util.Util;
+
 /**
  * O quickselect eh um algoritmo baseado no quicksort para
  * descobrir/selectionar, em tempo linear, a k-esima estatistica de ordem
@@ -42,7 +44,62 @@ public class QuickSelect<T extends Comparable<T>> {
 	 *
 	 */
 	public T quickSelect(T[] array, int k) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return selecT(array, 0, array.length-1, k);
+	}
+
+	public T selecT(T[] array, int leftIndex, int rightIndex, int k) {
+		T result = null;
+		if (array.length >0 && k <= array.length && k >= 1 && leftIndex <= rightIndex) {
+			int indexP = partition(array, leftIndex, rightIndex);
+			if (indexP == k-1) {
+				result = array[indexP];
+			}
+			else if (indexP > k-1) {
+				result = selecT(array, leftIndex, indexP-1, k);
+			}
+			else {
+				result = selecT(array, indexP+1, rightIndex, k);
+			}
+		}
+		return result;
+	}
+
+	public int partition(T[] array, int leftIndex, int rightIndex) {
+		int indexPivot = median(array, leftIndex, rightIndex);
+
+		Util.swap(array, leftIndex, indexPivot);
+
+		int ini = leftIndex;
+		int fim = rightIndex;
+		T pivot = array[leftIndex];
+
+		while (ini <= fim) {
+			while (ini <= fim && pivot.compareTo(array[ini]) >= 0){
+				ini++;
+			}
+			while (ini <= fim && pivot.compareTo(array[fim]) < 0) {
+				fim--;
+			}
+			if (ini < fim) {
+				Util.swap(array, ini, fim);
+			}
+		}
+		Util.swap(array, leftIndex, fim);
+
+		return fim;
+	}
+
+	public int median(T[] array, int leftIndex, int rightIndex) {
+		int meio = (leftIndex+rightIndex)/2;
+		if (array[leftIndex].compareTo(array[rightIndex]) > 0) {
+			Util.swap(array, rightIndex, leftIndex);
+		}
+		if (array[leftIndex].compareTo(array[meio]) > 0) {
+			Util.swap(array, leftIndex, meio);
+		}
+		if (array[meio].compareTo(array[rightIndex]) > 0) {
+			Util.swap(array, rightIndex, meio);
+		}
+		return meio;
 	}
 }
