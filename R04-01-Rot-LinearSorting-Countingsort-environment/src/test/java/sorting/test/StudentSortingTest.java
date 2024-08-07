@@ -26,8 +26,8 @@ public class StudentSortingTest {
 				31 });
 		populaVetorTamanhoImpar(new Integer[] { 6, 41, 32, 7, 26, 4, 37, 49,
 				11, 18, 36 });
-		populaVetorRepetido(new Integer[] { 4, 9, 8, 4, 1, 5, 1, 4 });
-		populaVetorIgual(new Integer[] { });
+		populaVetorRepetido(new Integer[] { 4, 9, 8, 4, 0, 5, 1, 4 });
+		populaVetorIgual(new Integer[] {6, 6,6,6,6 });
 
 		getImplementation();
 	}

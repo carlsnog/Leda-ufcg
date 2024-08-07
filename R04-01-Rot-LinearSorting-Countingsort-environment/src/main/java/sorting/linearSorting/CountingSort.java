@@ -23,8 +23,8 @@ public class CountingSort extends AbstractSorting<Integer> {
 			Integer[] ord =  new Integer[rightIndex-leftIndex+1];
 			// Ajusta as posições conforme a frequência
 			for (int i = rightIndex; i>= leftIndex; i--) {
-				ord[freq[array[i] -1] -1] = array[i];
-				freq[array[i] -1] -= 1;
+				ord[freq[array[i]]-1] = array[i];
+				freq[array[i]] -= 1;
 			}
 			replace(ord, array, leftIndex, rightIndex);
 		}		
@@ -48,13 +48,13 @@ public class CountingSort extends AbstractSorting<Integer> {
 	}
 
 	public Integer[] frequence(Integer[] array, int leftIndex, int rightIndex, int max) {
-		Integer[] freqIntegers = new Integer[max];
+		Integer[] freqIntegers = new Integer[max+1];
 		for (int k = 0; k<freqIntegers.length;k++) {
 			freqIntegers[k] = 0;
 		}
 		// frequência normal
 		for (int i = leftIndex; i<=rightIndex; i++) {
-			freqIntegers[array[i]-1] += 1;
+			freqIntegers[array[i]] += 1;
 		}
 		//frequência acumulada
 		for (int j = 1; j<freqIntegers.length; j++) {
