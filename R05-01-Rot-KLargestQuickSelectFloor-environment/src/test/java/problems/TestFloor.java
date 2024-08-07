@@ -11,17 +11,13 @@ public class TestFloor {
     private Integer[] vetorTamPar;
 	private Integer[] vetorTamImpar;
 	private Integer[] vetorVazio = {};
-	private Integer[] vetorValoresRepetidos;
-	private Integer[] vetorValoresIguais;
 
 	public Floor implementation;
 
 	@Before
 	public void setUp() {
-		vetorTamPar = new Integer[] { 30, 28, 7, 29, 11, 26, 4, 22, 23, 31 };
-		vetorTamImpar = new Integer[] { 6, 41, 32, 7, 26, 4, 37, 49, 11, 18, 36 };
-		vetorValoresRepetidos = new Integer[] { 4, 9, 8, 4, 1, 5, 1, 4 };
-		vetorValoresIguais = (new Integer[] { 6, 6, 6, 6 });
+		vetorTamPar = new Integer[] { -15, 9, 78, 150, 645, 1000};
+		vetorTamImpar = new Integer[] { 0, 2, 4, 20, 21, 25, 29, 30, 31 };
         getImplementation();
 	}
     private void getImplementation() {
@@ -31,7 +27,50 @@ public class TestFloor {
 
     @Test
     public void teste01() {
-        Integer a = implementation.floor(vetorTamImpar, 4);
-        Assert.assertEquals(new Integer(4), a);
+        Integer expected = implementation.floor(vetorTamImpar, 4);
+		Integer actual = 4;
+        Assert.assertEquals(actual, expected);
     }
+
+	@Test
+    public void teste02() {
+        Integer expected = implementation.floor(vetorTamImpar, 30);
+		Integer actual = 30;
+        Assert.assertEquals(actual, expected);
+    }
+
+	@Test
+    public void teste03() {
+        Integer expected = implementation.floor(vetorTamImpar, 27);
+		Integer actual = 25;
+        Assert.assertEquals(actual, expected);
+    }
+
+	@Test
+    public void teste04() {
+        Integer expected = implementation.floor(vetorTamPar, 0);
+		Integer actual = -15;
+        Assert.assertEquals(actual, expected);
+    }
+
+	@Test
+    public void teste05() {
+        Integer expected = implementation.floor(vetorTamPar, 800);
+		Integer actual = 645;
+        Assert.assertEquals(actual, expected);
+    }
+
+	@Test
+    public void teste06() {
+        Integer expected = implementation.floor(vetorTamImpar, -2);
+        Assert.assertNull(expected);
+    }
+
+	@Test
+    public void teste07() {
+        Integer expected = implementation.floor(vetorVazio, 20);
+        Assert.assertNull(expected);
+    }
+
+
 }

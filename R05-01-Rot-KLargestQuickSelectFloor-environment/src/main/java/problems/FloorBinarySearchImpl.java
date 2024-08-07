@@ -9,19 +9,16 @@ public class FloorBinarySearchImpl implements Floor {
 
 	public Integer search(Integer[] array, Integer x, int leftIndex, int rightIndex) {
 		Integer result = null;
-		if (leftIndex < rightIndex) {
+		if (leftIndex <= rightIndex) {
 			int meio = (rightIndex + leftIndex)/2;
-			if (array[meio].equals(x)) {
+			if (array[meio].compareTo(x) <=0) {
 				result = array[meio];
 				Integer aux = search(array, x, meio+1, rightIndex);
 				if (aux != null) {result = aux;}
 			}
-			else if (array[meio].compareTo(x) > 0) {
-				search(array, x, leftIndex, meio-1);
-			}
 			else {
+				result = search(array, x, leftIndex, meio-1);
 			}
-			 
 		}
 		return result;
 	}
