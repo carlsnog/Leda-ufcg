@@ -11,6 +11,7 @@ public class TestFloor {
     private Integer[] vetorTamPar;
 	private Integer[] vetorTamImpar;
 	private Integer[] vetorVazio = {};
+    private Integer[] vetorDesordenado;
 
 	public Floor implementation;
 
@@ -18,6 +19,7 @@ public class TestFloor {
 	public void setUp() {
 		vetorTamPar = new Integer[] { -15, 9, 78, 150, 645, 1000};
 		vetorTamImpar = new Integer[] { 0, 2, 4, 20, 21, 25, 29, 30, 31 };
+        vetorDesordenado = new Integer[] {5, 9, 4, 3, -5, 6, 4, 6, 4};
         getImplementation();
 	}
     private void getImplementation() {
@@ -72,5 +74,11 @@ public class TestFloor {
         Assert.assertNull(expected);
     }
 
+	@Test
+    public void teste08() {
+        Integer expected = implementation.floor(vetorDesordenado, 800);
+		Integer actual = 9;
+        Assert.assertEquals(actual, expected);
+    }
 
 }
