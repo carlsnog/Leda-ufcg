@@ -27,7 +27,7 @@ public class KLargestTest {
 	}
 
 	private void getImplementation() {
-		this.implementation = new KLargestOrderStatisticsImpl();
+		this.implementation = new KLargestOrderStatisticsImpl<>();
 	}
 
   	public void genericTest(Integer[] array, int k) {
@@ -37,23 +37,75 @@ public class KLargestTest {
 		}
 		Integer[] result = implementation.getKLargest(array, k);
 
+		if (k > array.length || k < 1) {
+			Assert.assertArrayEquals(result, new Integer[0]);
+		} else {
 		Arrays.sort(copy1);
         Integer[] part = new Integer[k];
         int i = part.length-1;
         for (int j = copy1.length - 1; j >= copy1.length - k; j--)  {
             part[i--] = copy1[j];
         }
-		Assert.assertArrayEquals(part, result);
+		Assert.assertArrayEquals(part, result); }
 	}
 
     @Test
     public void teste01(){
         genericTest(vetorTamImpar, 1);
     }
-    @Test
-    public void teste02() {
-        Integer[] actual = implementation.getKLargest(vetorTamImpar, 2);
-        Integer[] expected = new Integer[] {41, 49};
-        Assert.assertArrayEquals(expected, actual);
-    }
+	@Test
+	public void teste02() {
+		genericTest(vetorTamPar, 2);
+	}
+
+	@Test
+	public void teste03() {
+		genericTest(vetorTamPar, 5);
+	}
+
+	@Test
+	public void teste04() {
+		genericTest(vetorValoresIguais, 5);
+	}
+
+	@Test
+	public void teste05() {
+		genericTest(vetorValoresIguais, 4);
+	}
+
+	@Test
+	public void teste06() {
+		genericTest(vetorValoresIguais, 2);
+	}
+
+	@Test
+	public void teste07() {
+		genericTest(new Integer[0], 5);
+	}
+
+	@Test
+	public void teste08() {
+		genericTest(new Integer[0], 0);
+	}
+
+	@Test
+	public void teste09() {
+		genericTest(vetorValoresRepetidos, 5);
+	}
+
+	@Test
+	public void teste10() {
+		genericTest(vetorVazio, 5);
+	}
+
+	@Test
+	public void teste11() {
+		genericTest(vetorTamImpar,15);
+	}
+
+	@Test
+	public void teste12() {
+		genericTest(vetorTamImpar,12);
+	}
+
 }

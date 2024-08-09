@@ -32,14 +32,14 @@ public class KLargestOrderStatisticsImpl<T extends Comparable<T>> implements KLa
 	@Override
 	public T[] getKLargest(T[] array, int k) {
 		T[] result;
-		if (k < 1 || k > array.length) {result = (T[]) new Comparable[0];}
+		if (k < 1 || k > array.length) {result = (T[]) java.lang.reflect.Array.newInstance(array.getClass().getComponentType(), 0);}
 		else {
 			quickSort(array, 0, array.length-1);
-			result = (T[]) new Comparable[k];
-			int i = array.length;
-
+			result = (T[]) java.lang.reflect.Array.newInstance(array.getClass().getComponentType(), k);
+			
+			int i = array.length - k+1;
 			for (int j = 0; j < k; j++) {
-				result[j] = orderStatistics(array, i--);
+				result[j] = orderStatistics(array, i++);
 			}
 		}
 		return result;

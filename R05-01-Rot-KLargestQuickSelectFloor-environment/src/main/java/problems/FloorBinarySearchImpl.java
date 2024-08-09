@@ -27,7 +27,7 @@ public class FloorBinarySearchImpl implements Floor {
 	}
 
 	public void quickSort(Integer[] array, int leftIndex, int rightIndex) {
-		if (leftIndex <= rightIndex) {
+		if (leftIndex < rightIndex) {
 			int indexPivot = partition(array, leftIndex, rightIndex);
 			quickSort(array, leftIndex, indexPivot-1);
 			quickSort(array, indexPivot+1, rightIndex);
@@ -39,11 +39,11 @@ public class FloorBinarySearchImpl implements Floor {
 		int fim = rightIndex;
 		Integer pivot = array[leftIndex];
 
-		while (leftIndex <= rightIndex) {
-			while (leftIndex <= rightIndex && pivot.compareTo(array[ini]) >= 0) {
+		while (ini <= fim) {
+			while (ini <= fim && pivot.compareTo(array[ini]) >= 0) {
 				ini++;
 			}
-			while (leftIndex <= rightIndex && pivot.compareTo(array[fim]) < 0){
+			while (ini <= fim && pivot.compareTo(array[fim]) < 0){
 				fim--;
 			}
 			if (ini < fim) {

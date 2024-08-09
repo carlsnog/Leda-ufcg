@@ -74,11 +74,11 @@ public class TestFloor {
         Assert.assertNull(expected);
     }
 
-	// //@Test
-    // public void teste08() {
-    //     Integer expected = implementation.floor(vetorDesordenado, 800);
-	// 	Integer actual = 9;
-    //     Assert.assertEquals(actual, expected);
-    // }
+	@Test
+    public void teste08() {
+        Integer expected = implementation.floor(vetorDesordenado, 800);
+		Integer actual = 9;
+        Assert.assertEquals(actual, expected);
+    }
 
 }
