@@ -49,7 +49,7 @@ public class QueueImpl<T> implements Queue<T> {
 		if (isEmpty()) {
 			throw new QueueUnderflowException();
 		}
-		T value = this.array[0];
+		T value = head();
 		shiftLeft();
 		this.tail--;
 		return value;

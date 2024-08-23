@@ -20,21 +20,31 @@ public class CircularQueue<T> implements Queue<T> {
 			throw new QueueOverflowException();
 		}
 		if (element != null) {
-			if (isEmpty()) {
-				this.head = 0;
-				this.tail = 0;
-				this.array[0] = element;
-			} else {
-				this.tail = (this.tail + 1) % this.array.length;
-				this.array[this.tail] = element;
+			if (this.isEmpty()){
+				this.head++;
 			}
+			this.elements++;
+			this.tail = (this.tail + 1) % this.array.length;
+			this.array[this.tail] = element;
 		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (isEmpty()) {
+			throw new QueueUnderflowException();
+		}
+		T value = head();
+		this.elements--;
+		
+		if (isEmpty()) {
+			this.head = -1;
+			this.tail = -1;
+		}
+		else {
+			this.head = (this.head + 1) % this.array.length;
+		}
+		return value;
 	}
 
 	@Override
