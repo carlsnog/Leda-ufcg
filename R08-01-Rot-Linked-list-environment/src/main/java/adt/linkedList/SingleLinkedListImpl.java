@@ -50,8 +50,8 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public void remove(T element) {
 		if (element != null && !this.isEmpty()) {
-			if (this.head.getData().equals(element)) {
-				this.head = this.head.getNext();
+			if (getHead().getData().equals(element)) {
+				this.setHead(this.getHead().getNext());
 			}
 			else {
 				SingleLinkedListNode<T> prev = getHead();
@@ -69,8 +69,15 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public T[] toArray() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented!");
+		T[] array = (T[]) new Object[this.size()];
+		SingleLinkedListNode<T> auxNode = getHead();
+		int i = 0;
+		while (!auxNode.isNIL()) {
+			array[i] = auxNode.getData();
+			auxNode = auxNode.getNext();
+			i++;
+		}
+		return array;
 	}
 
 	public SingleLinkedListNode<T> getHead() {
