@@ -7,3 +7,23 @@
   <level>FINE</level>
   <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 150.165.74.85 at 28-08-2024 08*53*31</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-08-30T00:56:52.794-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 30-08-2024 00*56*52</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-08-30T02:19:50.554-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 30-08-2024 02*19*50</message>
+</record>

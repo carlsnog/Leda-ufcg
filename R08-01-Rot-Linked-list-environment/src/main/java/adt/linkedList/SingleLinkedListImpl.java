@@ -23,6 +23,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 		}
 		return size;
 	}
+	
 
 	@Override
 	public T search(T element) {
@@ -42,7 +43,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 			while (!auxHead.isNIL()) {
 				auxHead = auxHead.getNext();				
 			}
-			auxHead.data = element;
+			auxHead.setData(element);
 			auxHead.setNext(new SingleLinkedListNode<T>());
 		}
 	}
@@ -55,7 +56,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 			}
 			else {
 				SingleLinkedListNode<T> prev = getHead();
-				SingleLinkedListNode<T> auxHead = getHead();
+				SingleLinkedListNode<T> auxHead = getHead().getNext();
 				while (!auxHead.isNIL() && !auxHead.getData().equals(element)) {
 					prev = auxHead;
 					auxHead = auxHead.getNext();
