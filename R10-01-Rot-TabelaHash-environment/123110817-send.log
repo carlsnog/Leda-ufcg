@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-10T22:06:52.517-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 10-09-2024 22*06*52</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-10T23:10:45.492-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 10-09-2024 23*10*45</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-11T00:00:08.296-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 11-09-2024 00*00*08</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-11T00:13:39.040-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 11-09-2024 00*13*39</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-09-11T00:15:06.607-0300</date>
+  <logger>CARLOS DANIEL DA SILVA NOGUEIRA</logger>
+  <level>FINE</level>
+  <message>File 123110817-CARLOS DANIEL DA SILVA NOGUEIRA.zip was received. It was sent by CARLOS DANIEL DA SILVA NOGUEIRA from IP 172.28.12.109 at 11-09-2024 00*15*06</message>
+</record>
