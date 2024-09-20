@@ -100,7 +100,7 @@ public class StudentBSTTest {
 
 		int size = 12;
 		assertEquals(size, tree.size());
-
+	
 		while (!tree.isEmpty()) {
 			tree.remove(tree.getRoot().getData());
 			assertEquals(--size, tree.size());

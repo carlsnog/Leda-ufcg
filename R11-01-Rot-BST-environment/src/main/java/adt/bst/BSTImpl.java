@@ -175,47 +175,54 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 	@Override
 	public void remove(T element) {
 		BSTNode<T> node = search(element);
-		if (!node.isEmpty()) {
-			removeRecursive(node);
-		}
+		remove(node);
 	}
 
-	private void removeRecursive(BSTNode<T> node) {
-		if (node.isLeaf()) {
-			if (node.equals(getRoot())) {
-				// make a new node for the root
-				this.root = new BSTNode<T>();
-			}
-			else {
-				// only have nil as child
-				// set itlself as NIL
+	private boolean hasOnlyChild(BSTNode<T> node) {
+		return ((node.getLeft().isEmpty() || node.getRight().isEmpty()) && 
+				!(node.getLeft().isEmpty() && node.getRight().isEmpty()));
+	}
+	
+	private void remove(BSTNode<T> node) {
+		if (node != null && !node.isEmpty()) {	
+			if (node.isLeaf()) {
 				node.setData(null);
-				node.setLeft(null);
-				node.setRight(null);
-			}
-		} else if ((node.getLeft().isEmpty() || node.getRight().isEmpty()) && 
-		!(node.getLeft().isEmpty() && node.getRight().isEmpty())) {
-			// node has only one child
-			BSTNode<T> child = (BSTNode<T>) (node.getLeft().isEmpty() ? node.getRight() : node.getLeft());
-			if (node.equals(this.getRoot())) {
-				this.root = child;
-				root.setParent(null);
-			} else {
-				BSTNode<T> parent = (BSTNode<T>) node.getParent();
-
-				if (node.equals(parent.getLeft())) {
-					parent.setLeft(child);
+			} else if (hasOnlyChild(node)) {
+				if (node.getParent() != null) {
+					if (node.getParent().getData().compareTo(node.getData()) > 0) {
+						if (!node.getLeft().isEmpty()) {
+							node.getParent().setLeft(node.getLeft());
+							node.getLeft().setParent(node.getParent());
+						} else {
+							node.getParent().setLeft(node.getRight());
+							node.getRight().setParent(node.getParent());
+						}
+					} else {
+						if (!node.getLeft().isEmpty()) {
+							node.getParent().setRight(node.getLeft());
+							node.getLeft().setParent(node.getParent());
+						} else {
+							node.getParent().setRight(node.getRight());
+							node.getRight().setParent(node.getParent());
+						}
+					}
 				} else {
-					parent.setRight(child);
+					if (node.getLeft().isEmpty()) {
+						root = (BSTNode<T>) node.getRight();
+						root.setParent(null);
+					} else {
+						root = (BSTNode<T>) node.getLeft();
+						root.setParent(null);
+					}
 				}
-				child.setParent(parent);
+
+			} else {
+				BSTNode<T> sucessor = sucessor(node.getData());
+				node.setData(sucessor.getData());
+				remove(sucessor);
 			}
-		} else {
-			// node has two children
-			BSTNode<T> sucessor = sucessor(node.getData());
-			node.setData(sucessor.getData());
-			removeRecursive(sucessor);
 		}
+
 	}
 
 	@Override
